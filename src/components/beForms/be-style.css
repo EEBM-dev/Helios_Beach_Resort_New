@@ -1,0 +1,39 @@
+#be-booking-form {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto 10px auto;
+    padding: 0 5px;
+}
+
+#tl-booking-cart {
+    z-index: 1 !important;
+}
+
+#block-search,
+#block-search * {
+    box-sizing: border-box;
+}
+
+#block-search {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #edeff3;
+    border-radius: 10px;
+}
+
+#block-search.block-search--main {
+    background: #ffffff;
+    margin: -8rem auto 2rem auto;
+}
+
+.be-container {
+    padding: 0 30px;
+}
+
+@media screen and (max-width: 1210px) {
+    #block-search.block-search--main {
+        background: #edeff3;
+        margin: 0 auto;
+        border-radius: 0;
+    }
+}

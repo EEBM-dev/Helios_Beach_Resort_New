@@ -20,6 +20,7 @@ export default function Accommodations() {
             amenities: ["Free Wifi", "Fan", "Private Bathroom", "Mini Fridge"],
             features: ["Queen Size Bed", "Living Area", "Private Entrance", "24/7 Room Service"],
             category: "Bungalow with garden (Non AC)",
+            beRoomType: 5048143,
         },
         {
             image: "/images/image32.png",
@@ -28,6 +29,7 @@ export default function Accommodations() {
             amenities: ["Free Wifi", "Air Conditioning", "Private Bathroom", "Mini Fridge"],
             features: ["King Size Bed", "Seating Area", "Ocean-view Balcony", "24/7 Room Service"],
             category: "Deluxe Sea view bungalow",
+            beRoomType: 5013010,
         },
     ];
 
@@ -84,11 +86,17 @@ export default function Accommodations() {
                                         </div>
                                     </div>
                                     <div className="grid">
+                                        {/*<Button*/}
+                                        {/*    label="Book Now"*/}
+                                        {/*    className="btn-blue-light-r w-full text-lg"*/}
+                                        {/*    style={{ height: '4rem' }}*/}
+                                        {/*    onClick={() => navigate('/booking', { state: { category: item.category } })}*/}
+                                        {/*/>*/}
                                         <Button
                                             label="Book Now"
                                             className="btn-blue-light-r w-full text-lg"
                                             style={{ height: '4rem' }}
-                                            onClick={() => navigate('/booking', { state: { category: item.category } })}
+                                            onClick={() => navigate(`/booking?room-type=${item.beRoomType}`, { state: { category: item.category } })}
                                         />
                                     </div>
                                 </div>

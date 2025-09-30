@@ -10,6 +10,7 @@ import emailjs from '@emailjs/browser';
 import Footer from "../components/footer";
 import Header from "../components/header";
 import { useLocation } from "react-router-dom";
+import BeBookingForm from "../components/beForms/beBookingForm";
 
 export default function ReservationForm() {
     const [checkIn, setCheckIn] = useState<Date | null | undefined>(null);
@@ -160,8 +161,8 @@ export default function ReservationForm() {
             <div className="text-center" style={{ margin: "6rem 0rem 3rem 0rem" }}>
                 <div className="font-playfair text-6xl md:text-8xl lg:text-8xl font-bold">Reservation</div>
             </div>
-
-            <div className="p-3 md:p-6 lg:p-8">
+            <BeBookingForm />
+            <div className="p-3 md:p-6 lg:p-8 hidden">
                 <Card className="p-4 md:p-5 lg:p-6" style={{ backgroundColor: "#f4faff", borderRadius: "0.75rem" }}>
                     <div className="grid formgrid">
                         {/* Name */}
