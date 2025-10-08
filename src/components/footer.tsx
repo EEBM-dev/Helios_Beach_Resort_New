@@ -1,9 +1,12 @@
 import React from "react";
 import { Divider } from "primereact/divider";
 import { To, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Footer() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const shouldHide = location.pathname.startsWith("/booking");
 
     const links = [
         { label: "Home", path: "/" },
@@ -41,20 +44,22 @@ export default function Footer() {
                                 <div className="mt-3 font-semibold">BR. Number: PV 00239733</div>
                             </div>
                             <label className="font-playfair font-bold block mb-2">FOLLOW US:</label>
-                            <div className="flex gap-3 text-xl">
-                                <a href="https://www.facebook.com/heliosbeachranna?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
-                                    <i className="pi pi-facebook"></i>
-                                </a>
-                                <a
-                                    href="tel:+94761922620"
-                                    className="text-green-500 hover:text-green-700"
-                                >
-                                    <i className="pi pi-whatsapp"></i>
-                                </a>
-                                <a href="https://www.instagram.com/heliosbeachresort/" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-700">
-                                    <i className="pi pi-instagram"></i>
-                                </a>
-                            </div>
+                            {!shouldHide &&
+                                <div className="flex gap-3 text-xl">
+                                    <a href="https://www.facebook.com/heliosbeachranna?_rdc=1&_rdr#" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
+                                        <i className="pi pi-facebook"></i>
+                                    </a>
+                                    <a
+                                        href="tel:+94761922620"
+                                        className="text-green-500 hover:text-green-700"
+                                    >
+                                        <i className="pi pi-whatsapp"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/heliosbeachresort/" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-700">
+                                        <i className="pi pi-instagram"></i>
+                                    </a>
+                                </div>
+                            }
                         </div>
                     </div>
 

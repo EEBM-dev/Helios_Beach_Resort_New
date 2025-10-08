@@ -12,6 +12,7 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 import { Carousel } from "primereact/carousel";
 import { useNavigate } from "react-router-dom";
+import BeSearchFormMain from "../components/beForms/beSearchFormMain";
 
 export default function HomePage() {
     const navigate = useNavigate();
@@ -35,6 +36,7 @@ export default function HomePage() {
             img: "/images/image2.png",
             btn: "Check availability",
             category: "Bungalow with garden (Non AC)",
+            beRoomType: 5048143,
         },
         {
             title: "Deluxe Sea view bungalow",
@@ -42,6 +44,7 @@ export default function HomePage() {
             img: "/images/image3.png",
             btn: "Check availability",
             category: "Deluxe Sea view bungalow",
+            beRoomType: 5013010,
         },
     ];
 
@@ -322,7 +325,7 @@ export default function HomePage() {
                         </label>
                     </div>*/}
                 </div>
-
+                <BeSearchFormMain />
                 <div
                     className="flex flex-wrap justify-content-center p-4"
                     style={{ backgroundColor: "#007baf" }}
@@ -412,11 +415,17 @@ export default function HomePage() {
                                             />
                                         }
                                         footer={
+                                            // <Button
+                                            //     label={item.btn}
+                                            //     className="btn btn-yellow w-full"
+                                            //     style={{ height: "3rem" }}
+                                            //     onClick={() => navigate("/booking", { state: { category: item.category } })}
+                                            // />
                                             <Button
                                                 label={item.btn}
                                                 className="btn btn-yellow w-full"
                                                 style={{ height: "3rem" }}
-                                                onClick={() => navigate("/booking", { state: { category: item.category } })}
+                                                onClick={() => navigate(`/booking?room-type=${item.beRoomType}`, { state: { category: item.category } })}
                                             />
                                         }
                                     >
@@ -660,7 +669,8 @@ export default function HomePage() {
                             Book now and save up to 20% on your stay.
                         </p>
                         <div className="flex justify-content-center gap-3 mt-3 flex-wrap">
-                            <Button label="Book Your Stay" className="btn btn-yellow" icon="pi pi-arrow-right" iconPos="right" style={{ height: '3rem' }} onClick={() => navigate('/accommodations')} />
+                            {/*<Button label="Book Your Stay" className="btn btn-yellow" icon="pi pi-arrow-right" iconPos="right" style={{ height: '3rem' }} onClick={() => navigate('/accommodations')} />*/}
+                            <Button label="Book Your Stay" className="btn btn-yellow" icon="pi pi-arrow-right" iconPos="right" style={{ height: '3rem' }} onClick={() => navigate('/booking')} />
                             <Button label="Explore Packages" className="btn btn-white" style={{ height: '3rem' }} onClick={() => navigate('/packages')} />
                         </div>
                     </div>
